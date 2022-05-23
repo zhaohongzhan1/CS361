@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>events book</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <a href="/home"><input type="button" value="Home" onclick="{alert('No save, still back home?')}"></a>
+        <a href="/home"><input type="button" value="Delete" onclick="{alert('are you sure delete this event?')}"></a>
+        </tr>
+    </table>
+</body>
+
+<table> 
+    <tr>
+        <th>Event Name:<input type="text" placeholder="new Event Name" required></th>
+    </tr>    
+    <tr>
+        <th>Date:<input type="date" required></th>
+        <th>Status:<select>
+            <option value="Future">Future</option>
+            <option value="Working">Working</option>
+            <option value="Old">Old</option>
+        </th>
+    </tr>
+    <tr>
+        <th>Start:<input type="time"></th>
+        <th>End:<input type="time"></th>
+    </tr>
+    <tr>
+        <a href="/Update"><input type="button" value="Reset"></a>
+        <a href="/home"><input type="button" value="Save"></a>
+    </tr>
+</table>
+
+<table border='1'>
+    <thead>
+    <tr>
+        <th>Event Name</th>
+        <th>Date</th>
+        <th>Status</th>
+        <th>Start time</th>
+        <th>End time</th>
+    </tr>
+    <tbody>
+    {% for item in event %}
+    <tr>
+        <td><a href="/Update">{{item['event name']}}<a></td>
+        <td>{{item['Date']}}</td>
+        <td>{{item['status']}}</td>
+        <td>{{item['start']}}</td>
+        <td>{{item['end']}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</html>

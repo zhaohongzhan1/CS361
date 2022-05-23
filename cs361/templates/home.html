@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>events book</title>
+</head>
+<body>
+    <table>
+    <tr>
+    <th><a href="/"><input type="button" value="Log out"></a></th>
+    <th>EVENTS</th>
+    <th><a href="/NewEvent"><input type="button" value="New event"></a></th>
+    </tr>
+</table>
+</body>
+
+<table border='1'>
+    <thead>
+    <tr>
+        <th>Event Name</th>
+        <th>Status</th>
+        <th>Start time</th>
+        <th>End time</th>
+    </tr>
+    <tbody>
+    {% for item in events %}
+    <tr>
+        <td>{{item[2]}}</td>
+        <td>{{item[3]}}</td>
+        <td>{{item[4]}}</td>
+        <td>{{item[5]}}</td>
+        <td><a href="/Update" value = {{item[1]}} ><input type="button" value ='Edit'><a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+</html>
+

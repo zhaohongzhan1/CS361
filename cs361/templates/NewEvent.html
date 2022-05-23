@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>events book</title>
+</head>
+<body>
+    <table>
+        <tr>
+        <a href="/home"><input type="button" value="Home"  onclick="{alert('No save, still back home?')}"></a>
+        </tr>
+    </table>
+</body>
+
+<form id="newevent" action="/NewEvent" method="post"> 
+    <tr>
+        <th>Event Name:<input type="text" placeholder="Event Name" id="name" name="name" required></th>
+    </tr>    
+    <tr>
+        <th>Status:<select id="status" name="status" required>
+            <option value="Future">Future</option>
+            <option value="Working">Working</option>
+            <option value="Old">Old</option>
+        </th>
+    </tr>
+    <tr>
+        <th>Start:<input type="datetime-local" id="start" name="start" required></th>
+        <th>End:<input type="datetime-local" id="end" name="end" required></th>
+    </tr>
+    <tr>
+        <a href="/New"><input type="button" value="Reset"></a>
+        <a href="/home"><input type="submit" name="newevent" id="newevent" value="Save"></a>
+    </tr>
+</form>
+
+</html>
